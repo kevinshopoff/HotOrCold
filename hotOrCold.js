@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	var target = Math.floor(Math.random()*100);
 	var correct = false;
-	alert("Here we go!" + target);
+	/*alert("Here we go! " + target);*/
 	while (!correct) {
 		var guess = prompt("Enter your guess between 1 and 100");
 		if (guess == target) {

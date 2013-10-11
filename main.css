@@ -9,3 +9,78 @@ h1, h2{
 #cold{
 	color: blue;
 	}
+	
+#feedback{
+	visibility:hidden;
+	}
+	
+.circle{
+	height:80px;
+	width:80px;
+	border-radius:40px;
+	margin:10px;
+	display:inline-block;
+	position:relative;
+	}
+	
+.circlevalue {
+	position:absolute;
+	margin-top:28px;
+	margin-left:-10px;
+	}
+	
+#fourbelow, #fourabove{
+	background-color:blue;
+	}
+	
+#threebelow, #threeabove{
+	background-color:yellow;
+	}
+	
+#twobelow, #twoabove{
+	background-color:orange;
+	}
+	
+#onebelow, #oneabove{
+	background-color:red;
+	}
+	
+#middlecircle{
+	background-color:green;
+	}
+	
+#minus4{
+	visibility:hidden;
+}
+
+#minus3{
+	visibility:hidden;
+}
+
+#minus2{
+	visibility:hidden;
+}
+
+#minus1{
+	visibility:hidden;
+}
+
+#middle{
+	visibility:hidden;
+}
+
+#plus1{
+	visibility:hidden;
+}
+
+#plus2{
+	visibility:hidden;
+}
+
+#plus3{
+	visibility:hidden;
+}
+
+#plus4{
+	visibility:hidden;
+}

@@ -1,19 +1,31 @@
 $(document).ready(function(){
 	var target = Math.floor(Math.random()*100);
-	var correct = false;
 	var bttnReload = false;
 	console.log("The secret number is " + target);
 
 
-function checkGuess(guess) {	
-	//while (!correct) {
-		//var guess = prompt("Enter your guess between 1 and 100");
-		guess = parseInt(guess);
+	function giveFeedback(whichCircle, myGuess) {
+		$("whichCircle").text(myGuess);
+		$("#whichCircle").css("visibility","visible");
+		if (myGuess < 10) {
+			$(".circlevalue").css("margin-left","-6px");
+		};
+	};
+	
+	function checkGuess(guess) {	
+		$("#minus4").css("visibility","hidden");
+		$("#minus3").css("visibility","hidden");
+		$("#minus2").css("visibility","hidden");
+		$("#minus1").css("visibility","hidden");
+		$("#plus1").css("visibility","hidden");
+		$("#plus2").css("visibility","hidden");
+		$("#plus3").css("visibility","hidden");
+		$("#plus4").css("visibility","hidden");
+	
+		var guess = parseInt(guess);
 		if (isNaN(guess)) {
 			alert("Please enter a number.");
 		} else if (guess == target) {
-			correct = true;
-			//alert("You guessed " + target + " correctly!");
 			$('#feedback').text('You guessed ' + target + ' correctly!');
 			$("#feedback").css("visibility","visible");
 			$("#middle").text(target);
@@ -31,6 +43,7 @@ function checkGuess(guess) {
 			difference = target - guess;
 			switch (true) {
 				case (difference <= 5):
+					//giveFeedback("#minus1", guess);
 					$("#minus1").text(guess);
 					$("#minus1").css("visibility","visible");
 					if (guess < 10) {
@@ -61,7 +74,6 @@ function checkGuess(guess) {
 			}
 				
 		} else {
-			//alert("Your guess of " + guess + " is too high.  Please try again.");
 			$('#feedback').text('Your guess of ' + guess + ' is too high.  Please try again.');
 			$("#feedback").css("visibility","visible");
 			difference = guess - target;
@@ -104,15 +116,7 @@ function checkGuess(guess) {
 			window.location.reload();
 		} else {
 			var currentGuess = $('input[name=myGuess]').val();
-			//alert(currentGuess + " was your guess");
-			$("#minus4").css("visibility","hidden");
-			$("#minus3").css("visibility","hidden");
-			$("#minus2").css("visibility","hidden");
-			$("#minus1").css("visibility","hidden");
-			$("#plus1").css("visibility","hidden");
-			$("#plus2").css("visibility","hidden");
-			$("#plus3").css("visibility","hidden");
-			$("#plus4").css("visibility","hidden");
+			console.log(currentGuess + " was your guess");
 			checkGuess(currentGuess);
 		};
     });
@@ -123,17 +127,10 @@ function checkGuess(guess) {
 			window.location.reload();
 		} else {
 			var currentGuess = $('input[name=myGuess]').val();
-			//alert(currentGuess + " was your guess");
-			$("#minus4").css("visibility","hidden");
-			$("#minus3").css("visibility","hidden");
-			$("#minus2").css("visibility","hidden");
-			$("#minus1").css("visibility","hidden");
-			$("#plus1").css("visibility","hidden");
-			$("#plus2").css("visibility","hidden");
-			$("#plus3").css("visibility","hidden");
-			$("#plus4").css("visibility","hidden");
+			console.log(currentGuess + " was your guess");
 			checkGuess(currentGuess);
 		};
+		return false;
     });
 	
 });
